@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.Component.extend({
   editing: false,
 
   actions: {
@@ -11,11 +11,11 @@ export default Ember.Controller.extend({
       this.set('editing', false);
     },
     delete: function() {
-      this.set('model.deletedDate', Date.now());
-      this.transitionToRoute('posts');
+      this.set('post.deletedDate', Date.now());
+      this.sendAction('postDeleted');
     },
     publish: function() {
-      this.set('model.publishDate', Date.now());
+      this.set('post.publishDate', Date.now());
     }
   }
 });

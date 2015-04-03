@@ -1,0 +1,27 @@
+<div>
+  {{#if editing}}
+    <h2>{{input value=post.title}}</h2>
+    <p>{{textarea value=post.body rows="5" cols="45"}}</p>
+  {{else}}
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
+  {{/if}}
+</div>
+
+{{#if editing}}
+<button {{action 'save'}}>Save</button>
+{{else}}
+
+{{#unless post.isPublished}}
+  <button {{action 'edit'}}>Edit</button>
+{{/unless}}
+
+<button {{action 'delete'}}>Delete</button>
+
+  {{#if post.isPublished}}
+    <strong>Published {{ago post.publishedDate}}</strong>
+  {{else}}
+    <button {{action 'publish'}}>Publish</button>
+  {{/if}}
+{{/if}}
+
