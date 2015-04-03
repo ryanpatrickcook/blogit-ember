@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'sample-app',
+    modulePrefix: 'blogit',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

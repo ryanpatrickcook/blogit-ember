@@ -1,0 +1,30 @@
+{{#link-to 'posts'}}Go Back{{/link-to}}
+
+<div>
+  {{#if editing}}
+    <h2>{{input value=model.title}}</h2>
+    <p>{{textarea value=model.body rows="5" cols="45"}}</p>
+  {{else}}
+    <h2>{{model.title}}</h2>
+    <p>{{model.body}}</p>
+  {{/if}}
+</div>
+
+{{#if editing}}
+<button {{action 'save'}}>Save</button>
+{{else}}
+
+{{#unless model.isPublished}}
+  <button {{action 'edit'}}>Edit</button>
+{{/unless}}
+
+<button {{action 'delete'}}>Delete</button>
+
+  {{#if model.isPublished}}
+    <strong>Published {{ago model.publishedDate}}</strong>
+  {{else}}
+    <button {{action 'publish'}}>Publish</button>
+  {{/if}}
+{{/if}}
+
+
