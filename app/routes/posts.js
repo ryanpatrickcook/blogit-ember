@@ -7,7 +7,9 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    addPost: function(post) {
+    savePost: function(data) {
+      var post = this.store.createRecord('post', data);
+
       var posts = this.controllerFor('posts');
       posts.get('model').pushObject(post);
     }

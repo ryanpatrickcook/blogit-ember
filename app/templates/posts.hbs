@@ -1,4 +1,6 @@
-{{outlet}}
+{{#em-modal-toggler modal-id="new-post" class="btn btn-secondary"}}Add Post{{/em-modal-toggler}}
+
+{{new-post action="savePost"}}
 
 <div class="row">
   {{#each post in model}}
@@ -12,3 +14,5 @@
     </div><!--/.col-xs-6.col-lg-4-->
   {{/each}}
 </div><!--/row-->
+
+{{outlet}}
