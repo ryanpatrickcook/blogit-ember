@@ -1,0 +1,6 @@
+<h2>{{post.title}}</h2>
+<p>{{post.exerpt}}</p>
+{{#if post.isPublished}}
+  <strong>Published {{moment post.publishDate 'LL'}}</strong>
+{{/if}}
+<p>{{#link-to 'post' post class="btn btn-primary" role="button"}}Read More &raquo;{{/link-to}}</p>
