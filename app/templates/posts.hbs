@@ -4,8 +4,14 @@
 
 <div class="row">
   {{#each post in model}}
-    {{blog-item post=post}}
+    {{#draggable-object content=post}}
+      {{blog-item post=post}}
+    {{/draggable-object}}
   {{/each}}
 </div><!--/row-->
+
+{{#draggable-object-target action="deletePost"}}
+  {{fa-icon "trash" size=4}}
+{{/draggable-object-target}}
 
 {{outlet}}

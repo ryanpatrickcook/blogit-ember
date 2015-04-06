@@ -12,6 +12,12 @@ export default Ember.Route.extend({
 
       var posts = this.controllerFor('posts');
       posts.get('model').pushObject(post);
+    },
+    deletePost: function(post) {
+      post.set('deletedDate', Date.now);
+
+      var posts = this.controllerFor('posts');
+      posts.get('model').removeObject(post);
     }
   }
 });
