@@ -17,7 +17,13 @@ var Post = DS.Model.extend({
     }.property('publishDate'),
 
     exerpt: function() {
-      return this.get('body').substring(0, 50);
+      var limit = 110;
+      if( this.get("body.length") > limit ) {
+        return this.get('body').substring(0, limit) + "...";
+      }
+      else {
+        return this.get('body');
+      }
     }.property('body')
 });
 

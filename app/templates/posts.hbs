@@ -4,7 +4,7 @@
 
 <div class="row">
   {{#each post in model}}
-    {{#draggable-object content=post}}
+    {{#draggable-object content=post class="col-xs-6 col-lg-4"}}
       {{blog-item post=post}}
     {{/draggable-object}}
   {{/each}}
